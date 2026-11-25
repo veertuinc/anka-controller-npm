@@ -1,0 +1,57 @@
+{
+  "name": "@veertu/anka-controller",
+  "version": "0.1.0",
+  "description": "Client for the Anka Build Cloud Controller API",
+  "type": "module",
+  "license": "MIT",
+  "author": "Veertu Inc.",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veertuinc/anka-controller-npm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/veertuinc/anka-controller-npm/issues"
+  },
+  "homepage": "https://github.com/veertuinc/anka-controller-npm#readme",
+  "keywords": [
+    "anka",
+    "veertu",
+    "controller"
+  ],
+  "scripts": {
+    "build": "tsup && node scripts/copy-cts-types.mjs",
+    "check:exports": "node scripts/check-exports.mjs",
+    "test": "vitest run",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15"
+  }
+}
