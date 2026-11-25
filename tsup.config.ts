@@ -8,5 +8,5 @@ export default defineConfig({
   clean: true,
   splitting: false,
   outDir: 'dist',
-  target: 'node18'
+  target: 'node22'
 })

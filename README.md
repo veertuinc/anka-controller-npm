@@ -4,7 +4,7 @@ Client for the Anka Build Cloud Controller API.
 
 One client talks to one Controller. It has two groups: `instances` and `templates`. The package sends the HTTP request, reads the `{ status, message, body }` envelope, and throws when `status` is not `OK`.
 
-Node 18 or newer. The package has no runtime dependencies.
+Node 22.18 or newer. The package has no runtime dependencies.
 
 ## Install
 
